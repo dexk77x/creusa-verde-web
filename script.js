@@ -1,187 +1,67 @@
 
-// Variáveis globais
-let currentSlideIndex = 0;
+// Slideshow functionality
+let currentSlide = 0;
 const slides = document.querySelectorAll('.slide');
 const indicators = document.querySelectorAll('.indicator');
 
-// Navegação mobile
-document.addEventListener('DOMContentLoaded', function() {
-    const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('nav-menu');
-    const navLinks = document.querySelectorAll('.nav-link');
-
-    // Toggle menu mobile
-    hamburger.addEventListener('click', function() {
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
-    });
-
-    // Fechar menu ao clicar em um link
-    navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-        });
-    });
-
-    // Navegação suave
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            
-            if (targetSection) {
-                const navHeight = document.querySelector('.navbar').offsetHeight;
-                const targetPosition = targetSection.offsetTop - navHeight;
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-
-    // Inicializar slideshow
-    initSlideshow();
-});
-
-// Funções do Slideshow
-function initSlideshow() {
-    // Mostrar primeiro slide
-    showSlide(0);
+function showSlide(n) {
+    slides[currentSlide].classList.remove('active');
+    indicators[currentSlide].classList.remove('active');
     
-    // Auto-play do slideshow (trocar slide a cada 5 segundos)
-    setInterval(function() {
-        nextSlide();
-    }, 5000);
-}
-
-function showSlide(index) {
-    // Esconder todos os slides
-    slides.forEach(slide => {
-        slide.classList.remove('active');
-    });
+    currentSlide = (n + slides.length) % slides.length;
     
-    // Remover classe active de todos os indicadores
-    indicators.forEach(indicator => {
-        indicator.classList.remove('active');
-    });
-    
-    // Garantir que o índice está dentro dos limites
-    if (index >= slides.length) {
-        currentSlideIndex = 0;
-    } else if (index < 0) {
-        currentSlideIndex = slides.length - 1;
-    } else {
-        currentSlideIndex = index;
-    }
-    
-    // Mostrar slide atual
-    if (slides[currentSlideIndex]) {
-        slides[currentSlideIndex].classList.add('active');
-    }
-    
-    // Ativar indicador atual
-    if (indicators[currentSlideIndex]) {
-        indicators[currentSlideIndex].classList.add('active');
-    }
+    slides[currentSlide].classList.add('active');
+    indicators[currentSlide].classList.add('active');
 }
 
 function changeSlide(direction) {
-    currentSlideIndex += direction;
-    showSlide(currentSlideIndex);
+    showSlide(currentSlide + direction);
 }
 
-function currentSlide(index) {
-    showSlide(index - 1); // -1 porque os indicadores começam de 1
+function currentSlideIndex(n) {
+    showSlide(n - 1);
 }
 
-function nextSlide() {
+// Auto slideshow
+setInterval(() => {
     changeSlide(1);
-}
+}, 5000);
 
-function prevSlide() {
-    changeSlide(-1);
-}
+// Mobile menu functionality
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('nav-menu');
 
-// Efeitos de scroll
-window.addEventListener('scroll', function() {
-    const navbar = document.querySelector('.navbar');
-    
-    if (window.scrollY > 50) {
-        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-        navbar.style.backdropFilter = 'blur(10px)';
-    } else {
-        navbar.style.background = '#ffffff';
-        navbar.style.backdropFilter = 'none';
-    }
+hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    hamburger.classList.toggle('active');
 });
 
-// Animações ao scroll (Intersection Observer)
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver(function(entries) {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.animationDelay = '0.2s';
-            entry.target.style.animationFillMode = 'both';
-            entry.target.style.animationName = 'fadeInUp';
-            entry.target.style.animationDuration = '0.6s';
-        }
-    });
-}, observerOptions);
-
-// Observar elementos para animação
-document.addEventListener('DOMContentLoaded', function() {
-    const elementsToAnimate = document.querySelectorAll('.course-card, .teacher-card, .contact-card');
-    elementsToAnimate.forEach(element => {
-        observer.observe(element);
-    });
-});
-
-// Função para smooth scroll (fallback para navegadores mais antigos)
-function smoothScroll(target) {
-    const element = document.querySelector(target);
-    if (element) {
-        const navHeight = document.querySelector('.navbar').offsetHeight;
-        const targetPosition = element.offsetTop - navHeight;
+// Smooth scrolling for navigation links
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
         
-        window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-        });
-    }
-}
+        if (targetSection) {
+            targetSection.scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+        
+        // Close mobile menu if open
+        navMenu.classList.remove('active');
+        hamburger.classList.remove('active');
+    });
+});
 
-// Performance: Debounce para eventos de scroll
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
-
-// Aplicar debounce ao evento de scroll
-const debouncedScrollHandler = debounce(function() {
-    const navbar = document.querySelector('.navbar');
-    
+// Navbar scroll effect
+window.addEventListener('scroll', () => {
+    const navbar = document.getElementById('navbar');
     if (window.scrollY > 50) {
-        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-        navbar.style.backdropFilter = 'blur(10px)';
+        navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
     } else {
-        navbar.style.background = '#ffffff';
-        navbar.style.backdropFilter = 'none';
+        navbar.style.backgroundColor = 'var(--white)';
     }
-}, 10);
-
-window.addEventListener('scroll', debouncedScrollHandler);
+});
