@@ -1,28 +1,327 @@
 
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EEEP Dona Creusa do Carmo Rocha - Escola Estadual de Educação Profissional</title>
-    <meta name="description" content="EEEP Dona Creusa do Carmo Rocha - Escola Estadual de Educação Profissional oferecendo cursos técnicos de Informática, Administração e Design de Interiores." />
-    <meta name="author" content="EEEP Dona Creusa do Carmo Rocha" />
-    <meta name="keywords" content="escola técnica, educação profissional, cursos técnicos, EEEP, Ceará, informática, administração, design de interiores" />
+    <meta name="description" content="EEEP Dona Creusa do Carmo Rocha - Escola Estadual de Educação Profissional oferecendo cursos técnicos de Informática, Administração e Design de Interiores.">
+    <meta name="author" content="EEEP Dona Creusa do Carmo Rocha">
+    <meta name="keywords" content="escola técnica, educação profissional, cursos técnicos, EEEP, Ceará, informática, administração, design de interiores">
+    
+    <meta property="og:title" content="EEEP Dona Creusa do Carmo Rocha">
+    <meta property="og:description" content="Escola Estadual de Educação Profissional oferecendo cursos técnicos de qualidade">
+    <meta property="og:type" content="website">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navegação -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="logo">E</div>
+                <div class="brand-text">
+                    <h1>EEEP Dona Creusa</h1>
+                    <p>do Carmo Rocha</p>
+                </div>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a href="#inicio" class="nav-link">Início</a>
+                <a href="#cursos" class="nav-link">Cursos</a>
+                <a href="#equipe" class="nav-link">Equipe</a>
+                <a href="#contato" class="nav-link">Contato</a>
+            </div>
+            
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
-    <meta property="og:title" content="EEEP Dona Creusa do Carmo Rocha" />
-    <meta property="og:description" content="Escola Estadual de Educação Profissional oferecendo cursos técnicos de qualidade" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">EEEP Dona Creusa do Carmo Rocha</h1>
+                <p class="hero-subtitle">Escola Estadual de Educação Profissional</p>
+            </div>
+            
+            <!-- Slideshow -->
+            <div class="slideshow-container">
+                <div class="slide active">
+                    <img src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=1200&h=600&fit=crop" alt="Bem-vindos à EEEP">
+                    <div class="slide-content">
+                        <h2>Bem-vindos à EEEP Dona Creusa do Carmo Rocha</h2>
+                        <p>Educação técnica de qualidade formando profissionais para o futuro</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200&h=600&fit=crop" alt="Cursos Técnicos">
+                    <div class="slide-content">
+                        <h2>Cursos Técnicos de Excelência</h2>
+                        <p>Informática, Administração e Design de Interiores com professores qualificados</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=1200&h=600&fit=crop" alt="Tecnologia">
+                    <div class="slide-content">
+                        <h2>Tecnologia e Inovação</h2>
+                        <p>Laboratórios modernos e ensino atualizado com as demandas do mercado</p>
+                    </div>
+                </div>
+                
+                <button class="slide-btn prev" onclick="changeSlide(-1)">❮</button>
+                <button class="slide-btn next" onclick="changeSlide(1)">❯</button>
+                
+                <div class="slide-indicators">
+                    <span class="indicator active" onclick="currentSlide(1)"></span>
+                    <span class="indicator" onclick="currentSlide(2)"></span>
+                    <span class="indicator" onclick="currentSlide(3)"></span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@eeepdonacreusa" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-  </head>
+    <!-- Missão -->
+    <section class="mission">
+        <div class="container">
+            <h2>Bem-vindos à Nossa Escola</h2>
+            <div class="mission-content">
+                <p>A EEEP Dona Creusa do Carmo Rocha é uma instituição comprometida com a excelência na educação profissional, oferecendo cursos técnicos de qualidade que preparam nossos estudantes para os desafios do mercado de trabalho.</p>
+                <p>Nossa missão é formar cidadãos competentes, éticos e preparados para contribuir positivamente com a sociedade, através de uma educação inovadora e transformadora.</p>
+            </div>
+        </div>
+    </section>
 
-  <body>
-    <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+    <!-- Cursos -->
+    <section id="cursos" class="courses">
+        <div class="container">
+            <h2>Nossos Cursos Técnicos</h2>
+            <p class="section-subtitle">Oferecemos cursos técnicos de alta qualidade com professores especializados e infraestrutura moderna para sua formação profissional.</p>
+            
+            <div class="courses-grid">
+                <div class="course-card">
+                    <div class="course-icon">💻</div>
+                    <h3>Informática</h3>
+                    <p>Formação completa em tecnologia da informação, programação e redes de computadores.</p>
+                    <div class="teachers">
+                        <h4>Professores:</h4>
+                        <span class="teacher-tag">Elmen</span>
+                        <span class="teacher-tag">Ricardo</span>
+                    </div>
+                </div>
+                
+                <div class="course-card">
+                    <div class="course-icon">📊</div>
+                    <h3>Administração</h3>
+                    <p>Gestão empresarial, empreendedorismo e administração de recursos.</p>
+                    <div class="teachers">
+                        <h4>Professores:</h4>
+                        <span class="teacher-tag">Assis</span>
+                    </div>
+                </div>
+                
+                <div class="course-card">
+                    <div class="course-icon">🏠</div>
+                    <h3>Design de Interiores</h3>
+                    <p>Criação de ambientes funcionais e estéticos com técnicas de design moderno.</p>
+                    <div class="teachers">
+                        <h4>Professores:</h4>
+                        <span class="teacher-tag">Stekel</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Equipe -->
+    <section id="equipe" class="team">
+        <div class="container">
+            <h2>Nossa Equipe Escolar</h2>
+            <p class="section-subtitle">Conheça os profissionais dedicados que fazem parte da nossa comunidade educativa.</p>
+            
+            <!-- Núcleo Gestor -->
+            <div class="team-section">
+                <h3>Núcleo Gestor</h3>
+                <div class="team-grid">
+                    <div class="teacher-card">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=300&h=300&fit=crop&crop=face" alt="David">
+                        <h4>David</h4>
+                        <p>Coordenador Escolar</p>
+                    </div>
+                    <div class="teacher-card">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=300&h=300&fit=crop&crop=face" alt="Enedina">
+                        <h4>Enedina</h4>
+                        <p>Coordenadora Escolar</p>
+                    </div>
+                    <div class="teacher-card">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=300&h=300&fit=crop&crop=face" alt="Gadelha">
+                        <h4>Gadelha</h4>
+                        <p>Coordenador Escolar</p>
+                    </div>
+                    <div class="teacher-card">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=300&h=300&fit=crop&crop=face" alt="Sandra">
+                        <h4>Sandra</h4>
+                        <p>Gestão</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ciências da Natureza -->
+            <div class="team-section">
+                <h3>Ciências da Natureza</h3>
+                <div class="team-grid">
+                    <div class="teacher-card">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=300&h=300&fit=crop&crop=face" alt="Herlen">
+                        <h4>Herlen</h4>
+                        <p>Professora de Química</p>
+                    </div>
+                    <div class="teacher-card">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=300&h=300&fit=crop&crop=face" alt="Lia">
+                        <h4>Lia</h4>
+                        <p>Professora de Biologia</p>
+                    </div>
+                    <div class="teacher-card">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=300&h=300&fit=crop&crop=face" alt="Andre">
+                        <h4>Andre</h4>
+                        <p>Professor de Física</p>
+                    </div>
+                    <div class="teacher-card">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=300&h=300&fit=crop&crop=face" alt="Nagela">
+                        <h4>Nagela</h4>
+                        <p>Professora de Educação Física</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ciências Humanas -->
+            <div class="team-section">
+                <h3>Ciências Humanas</h3>
+                <div class="team-grid">
+                    <div class="teacher-card">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=300&h=300&fit=crop&crop=face" alt="Paiva">
+                        <h4>Paiva</h4>
+                        <p>Professor de História</p>
+                    </div>
+                    <div class="teacher-card">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=300&h=300&fit=crop&crop=face" alt="Semiramis">
+                        <h4>Semiramis</h4>
+                        <p>Professora de Sociologia</p>
+                    </div>
+                    <div class="teacher-card">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=300&h=300&fit=crop&crop=face" alt="Lucas">
+                        <h4>Lucas</h4>
+                        <p>Professor de Filosofia</p>
+                    </div>
+                    <div class="teacher-card">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=300&h=300&fit=crop&crop=face" alt="Ney">
+                        <h4>Ney</h4>
+                        <p>Professor de Geografia</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Linguagens -->
+            <div class="team-section">
+                <h3>Linguagens</h3>
+                <div class="team-grid">
+                    <div class="teacher-card">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=300&h=300&fit=crop&crop=face" alt="Julio">
+                        <h4>Julio</h4>
+                        <p>Professor de Português</p>
+                    </div>
+                    <div class="teacher-card">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=300&h=300&fit=crop&crop=face" alt="Alba">
+                        <h4>Alba</h4>
+                        <p>Professora de Espanhol</p>
+                    </div>
+                    <div class="teacher-card">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=300&h=300&fit=crop&crop=face" alt="Claudia">
+                        <h4>Claudia</h4>
+                        <p>Professora de Inglês</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Matemática -->
+            <div class="team-section">
+                <h3>Matemática</h3>
+                <div class="team-grid">
+                    <div class="teacher-card">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=300&h=300&fit=crop&crop=face" alt="Airton">
+                        <h4>Airton</h4>
+                        <p>Professor de Matemática</p>
+                    </div>
+                    <div class="teacher-card">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=300&h=300&fit=crop&crop=face" alt="Gleuber">
+                        <h4>Gleuber</h4>
+                        <p>Professor de Matemática</p>
+                    </div>
+                    <div class="teacher-card">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=300&h=300&fit=crop&crop=face" alt="Sarah">
+                        <h4>Sarah</h4>
+                        <p>Professora de Matemática</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="contact">
+        <div class="container">
+            <h2>Entre em Contato</h2>
+            <div class="contact-card">
+                <p>Estamos sempre prontos para atender você. Entre em contato conosco para mais informações sobre nossos cursos e processos seletivos.</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="contact-icon">📞</span>
+                        <span>(85) 0000-0000</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">✉️</span>
+                        <span>contato@eeepdonacreusa.edu.br</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>EEEP Dona Creusa do Carmo Rocha</h3>
+                    <p>Escola Estadual de Educação Profissional oferecendo ensino técnico de qualidade para formar profissionais capacitados para o mercado de trabalho.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <p>📍 Endereço da Escola</p>
+                    <p>📞 (85) 0000-0000</p>
+                    <p>✉️ contato@eeepdonacreusa.edu.br</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Redes Sociais</h4>
+                    <p>📘 Facebook: /eeepdonacreusa</p>
+                    <p>📷 Instagram: @eeepdonacreusa</p>
+                    <p>🐦 Twitter: @eeepdonacreusa</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 EEEP Dona Creusa do Carmo Rocha. Todos os direitos reservados.</p>
+                <p>Desenvolvido com ❤️ para a educação cearense</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
