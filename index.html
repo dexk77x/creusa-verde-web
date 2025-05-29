@@ -5,35 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EEEP Dona Creusa do Carmo Rocha - Escola Estadual de Educação Profissional</title>
-    <meta name="description" content="EEEP Dona Creusa do Carmo Rocha - Escola Estadual de Educação Profissional oferecendo cursos técnicos de Informática, Administração e Design de Interiores.">
-    <meta name="author" content="EEEP Dona Creusa do Carmo Rocha">
-    <meta name="keywords" content="escola técnica, educação profissional, cursos técnicos, EEEP, Ceará, informática, administração, design de interiores">
-    
-    <meta property="og:title" content="EEEP Dona Creusa do Carmo Rocha">
-    <meta property="og:description" content="Escola Estadual de Educação Profissional oferecendo cursos técnicos de qualidade">
-    <meta property="og:type" content="website">
-    
+    <meta name="description" content="EEEP Dona Creusa do Carmo Rocha - Escola Estadual de Educação Profissional oferecendo cursos técnicos de qualidade">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navegação -->
-    <nav class="navbar">
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <div class="nav-brand">
-                <div class="logo">E</div>
-                <div class="brand-text">
+            <!-- Logo e nome da escola -->
+            <div class="nav-logo">
+                <div class="logo-circle">
+                    <span>E</span>
+                </div>
+                <div class="logo-text">
                     <h1>EEEP Dona Creusa</h1>
                     <p>do Carmo Rocha</p>
                 </div>
             </div>
-            
+
+            <!-- Menu desktop -->
             <div class="nav-menu" id="nav-menu">
                 <a href="#inicio" class="nav-link">Início</a>
                 <a href="#cursos" class="nav-link">Cursos</a>
                 <a href="#equipe" class="nav-link">Equipe</a>
                 <a href="#contato" class="nav-link">Contato</a>
             </div>
-            
+
+            <!-- Botão hamburger -->
             <div class="hamburger" id="hamburger">
                 <span></span>
                 <span></span>
@@ -53,12 +51,13 @@
             <!-- Slideshow -->
             <div class="slideshow-container">
                 <div class="slide active">
-                    <img src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=1200&h=600&fit=crop" alt="Bem-vindos à EEEP">
+                    <img src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=1200&h=600&fit=crop" alt="Escola">
                     <div class="slide-content">
                         <h2>Bem-vindos à EEEP Dona Creusa do Carmo Rocha</h2>
                         <p>Educação técnica de qualidade formando profissionais para o futuro</p>
                     </div>
                 </div>
+                
                 <div class="slide">
                     <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200&h=600&fit=crop" alt="Cursos Técnicos">
                     <div class="slide-content">
@@ -66,6 +65,7 @@
                         <p>Informática, Administração e Design de Interiores com professores qualificados</p>
                     </div>
                 </div>
+                
                 <div class="slide">
                     <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=1200&h=600&fit=crop" alt="Tecnologia">
                     <div class="slide-content">
@@ -73,10 +73,12 @@
                         <p>Laboratórios modernos e ensino atualizado com as demandas do mercado</p>
                     </div>
                 </div>
-                
-                <button class="slide-btn prev" onclick="changeSlide(-1)">❮</button>
-                <button class="slide-btn next" onclick="changeSlide(1)">❯</button>
-                
+
+                <!-- Controles do slideshow -->
+                <button class="slide-control prev" onclick="changeSlide(-1)">❮</button>
+                <button class="slide-control next" onclick="changeSlide(1)">❯</button>
+
+                <!-- Indicadores -->
                 <div class="slide-indicators">
                     <span class="indicator active" onclick="currentSlide(1)"></span>
                     <span class="indicator" onclick="currentSlide(2)"></span>
@@ -86,22 +88,22 @@
         </div>
     </section>
 
-    <!-- Missão -->
-    <section class="mission">
+    <!-- Missão e Boas-vindas -->
+    <section class="welcome-section">
         <div class="container">
             <h2>Bem-vindos à Nossa Escola</h2>
-            <div class="mission-content">
+            <div class="welcome-content">
                 <p>A EEEP Dona Creusa do Carmo Rocha é uma instituição comprometida com a excelência na educação profissional, oferecendo cursos técnicos de qualidade que preparam nossos estudantes para os desafios do mercado de trabalho.</p>
                 <p>Nossa missão é formar cidadãos competentes, éticos e preparados para contribuir positivamente com a sociedade, através de uma educação inovadora e transformadora.</p>
             </div>
         </div>
     </section>
 
-    <!-- Cursos -->
-    <section id="cursos" class="courses">
+    <!-- Seção de Cursos -->
+    <section id="cursos" class="courses-section">
         <div class="container">
             <h2>Nossos Cursos Técnicos</h2>
-            <p class="section-subtitle">Oferecemos cursos técnicos de alta qualidade com professores especializados e infraestrutura moderna para sua formação profissional.</p>
+            <p class="section-description">Oferecemos cursos técnicos de alta qualidade com professores especializados e infraestrutura moderna para sua formação profissional.</p>
             
             <div class="courses-grid">
                 <div class="course-card">
@@ -114,7 +116,7 @@
                         <span class="teacher-tag">Ricardo</span>
                     </div>
                 </div>
-                
+
                 <div class="course-card">
                     <div class="course-icon">📊</div>
                     <h3>Administração</h3>
@@ -124,7 +126,7 @@
                         <span class="teacher-tag">Assis</span>
                     </div>
                 </div>
-                
+
                 <div class="course-card">
                     <div class="course-icon">🏠</div>
                     <h3>Design de Interiores</h3>
@@ -138,14 +140,14 @@
         </div>
     </section>
 
-    <!-- Equipe -->
-    <section id="equipe" class="team">
+    <!-- Seção da Equipe -->
+    <section id="equipe" class="team-section">
         <div class="container">
             <h2>Nossa Equipe Escolar</h2>
-            <p class="section-subtitle">Conheça os profissionais dedicados que fazem parte da nossa comunidade educativa.</p>
-            
+            <p class="section-description">Conheça os profissionais dedicados que fazem parte da nossa comunidade educativa.</p>
+
             <!-- Núcleo Gestor -->
-            <div class="team-section">
+            <div class="team-category">
                 <h3>Núcleo Gestor</h3>
                 <div class="team-grid">
                     <div class="teacher-card">
@@ -172,7 +174,7 @@
             </div>
 
             <!-- Ciências da Natureza -->
-            <div class="team-section">
+            <div class="team-category">
                 <h3>Ciências da Natureza</h3>
                 <div class="team-grid">
                     <div class="teacher-card">
@@ -199,7 +201,7 @@
             </div>
 
             <!-- Ciências Humanas -->
-            <div class="team-section">
+            <div class="team-category">
                 <h3>Ciências Humanas</h3>
                 <div class="team-grid">
                     <div class="teacher-card">
@@ -226,7 +228,7 @@
             </div>
 
             <!-- Linguagens -->
-            <div class="team-section">
+            <div class="team-category">
                 <h3>Linguagens</h3>
                 <div class="team-grid">
                     <div class="teacher-card">
@@ -248,7 +250,7 @@
             </div>
 
             <!-- Matemática -->
-            <div class="team-section">
+            <div class="team-category">
                 <h3>Matemática</h3>
                 <div class="team-grid">
                     <div class="teacher-card">
@@ -271,8 +273,8 @@
         </div>
     </section>
 
-    <!-- Contato -->
-    <section id="contato" class="contact">
+    <!-- Seção de Contato -->
+    <section id="contato" class="contact-section">
         <div class="container">
             <h2>Entre em Contato</h2>
             <div class="contact-card">
@@ -295,26 +297,33 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
+                <!-- Informações da escola -->
                 <div class="footer-section">
                     <h3>EEEP Dona Creusa do Carmo Rocha</h3>
                     <p>Escola Estadual de Educação Profissional oferecendo ensino técnico de qualidade para formar profissionais capacitados para o mercado de trabalho.</p>
                 </div>
-                
+
+                <!-- Contato -->
                 <div class="footer-section">
                     <h4>Contato</h4>
-                    <p>📍 Endereço da Escola</p>
-                    <p>📞 (85) 0000-0000</p>
-                    <p>✉️ contato@eeepdonacreusa.edu.br</p>
+                    <div class="footer-contacts">
+                        <p>📍 Endereço da Escola</p>
+                        <p>📞 (85) 0000-0000</p>
+                        <p>✉️ contato@eeepdonacreusa.edu.br</p>
+                    </div>
                 </div>
-                
+
+                <!-- Redes sociais -->
                 <div class="footer-section">
                     <h4>Redes Sociais</h4>
-                    <p>📘 Facebook: /eeepdonacreusa</p>
-                    <p>📷 Instagram: @eeepdonacreusa</p>
-                    <p>🐦 Twitter: @eeepdonacreusa</p>
+                    <div class="footer-contacts">
+                        <p>📘 Facebook: /eeepdonacreusa</p>
+                        <p>📷 Instagram: @eeepdonacreusa</p>
+                        <p>🐦 Twitter: @eeepdonacreusa</p>
+                    </div>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
                 <p>&copy; 2024 EEEP Dona Creusa do Carmo Rocha. Todos os direitos reservados.</p>
                 <p>Desenvolvido com ❤️ para a educação cearense</p>
